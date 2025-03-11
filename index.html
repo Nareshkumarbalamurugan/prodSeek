@@ -5,54 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProdSeek - Find the Best Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .teal-text { color: #20C997; }
+        .teal-bg { background-color: #20C997; }
+        .light-gray-bg { background-color: #F8F9FA; }
+        .teal-btn { 
+            background-color: #20C997; 
+            color: #FFFFFF; 
+            border: none; 
+            transition: all 0.3s ease;
+        }
+        .teal-btn:hover {
+            background-color: #1AAE7F;
+        }
+        .product-card { 
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(32, 201, 151, 0.3);
+        }
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .header {
+            background-color: #FFFFFF;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #20C997 !important;
+        }
+        .nav-link {
+            color: #343A40;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #20C997;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #20C997;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
-<body>
-    <header class="text-center my-4">
-        <h1 class="fw-bold" style="color: black;">ProdSeek</h1>
-        <nav class="btn-group" role="group" aria-label="Navigation">
-            <a href="index.html" class="btn btn-outline-primary">Home</a>
-            <a href="about.html" class="btn btn-outline-primary">About</a>
-            <a href="products.html" class="btn btn-outline-primary">Products</a>
-            <a href="login.html" class="btn btn-outline-primary">Login</a>
-        </nav>
+<body class="light-gray-bg">
+    <!-- Header -->
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="#">ProdSeek</a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </nav>
+        </div>
     </header>
 
-    <main class="text-center">
-        <section id="home" class="mb-5">
-            <h2>Welcome to ProdSeek</h2>
-            <p>Find the best products easily and quickly.</p>
-        </section>
+    <!-- Hero Section -->
+    <section class="text-center p-5 teal-bg text-white">
+        <h1 class="fw-bold">Welcome to ProdSeek</h1>
+        <p class="lead">Find the best products easily and quickly.</p>
+        <div class="input-group w-50 mx-auto">
+            <input type="text" class="form-control" placeholder="Search for products...">
+            <button class="btn btn-light teal-text">Search</button>
+        </div>
+    </section>
 
-        <section id="search" class="mb-5">
-            <h1>Search for Products</h1>
-            <input type="text" class="form-control w-50 d-inline" placeholder="Product name">
-            <button class="btn btn-outline-secondary" >Search</button>
-        </section>
-
-        <section id="products" class="mb-5">
-            <h2>Our Products</h2>
-            <div class="d-flex flex-wrap justify-content-center gap-3">
-                <a href="fruits_veggies/fruits_veggies.html" class="p-3 border rounded shadow-sm text-decoration-none text-dark" style="width: 250px; text-align: center;">
-                    <img src="home_images/fruits.jpg" width="100%">
-                    <h3>Fruits & Veggies</h3>
-                </a>
-                <a href="subcategories.html" class="p-3 border rounded shadow-sm text-decoration-none text-dark" style="width: 250px; text-align: center;">
-                    <img src="home_images/dairy_products.jpeg" width="100%">
-                    <h3>Dairy Products</h3>
-                </a>
-                <a href="subcategories.html" class="p-3 border rounded shadow-sm text-decoration-none text-dark" style="width: 250px; text-align: center;">
-                    <img src="home_images/grains_cereals.jpg" width="100%">
-                    <h3>Grains & Cereals</h3>
-                </a>
-                <a href="subcategories.html" class="p-3 border rounded shadow-sm text-decoration-none text-dark" style="width: 250px; text-align: center;">
-                    <img src="home_images/food_beverage.jpg" width="100%">
-                    <h3>Food Items & Beverages</h3>
+    <!-- Product Section -->
+    <section class="container text-center py-5">
+        <h2 class="mb-4 teal-text fw-bold">Our Products</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <div class="col">
+                <a href="fruits_veggies/fruits_veggies.html" class="card text-decoration-none shadow-lg border-0 product-card white-bg">
+                    <img src="home_images/fruits.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bold teal-text">Fruits & Veggies</h5>
+                    </div>
                 </a>
             </div>
-        </section>
-    </main>
+            <div class="col">
+                <a href="fruits_veggies.html" class="card text-decoration-none shadow-lg border-0 product-card white-bg">
+                    <img src="home_images/dairy_products.jpeg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bold teal-text">Dairy Products</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="fruits_veggies.html" class="card text-decoration-none shadow-lg border-0 product-card white-bg">
+                    <img src="home_images/grains_cereals.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bold teal-text">Grains & Cereals</h5>
+                    </div>
+                </a>
+            </div>
+            <div class="col">
+                <a href="fruits_veggies.html" class="card text-decoration-none shadow-lg border-0 product-card white-bg">
+                    <img src="home_images/food_beverage.jpg" class="card-img-top">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bold teal-text">Food Items & Beverages</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <footer class="text-center py-3" style="background: #f8f9fa;">
+    <!-- Footer -->
+    <footer class="text-center py-3 teal-bg text-white">
         <p>&copy; 2025 ProdSeek. All rights reserved.</p>
     </footer>
 </body>

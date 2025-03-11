@@ -5,41 +5,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - ProdSeek</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .teal-text { color: #20C997; }
+        .teal-bg { background-color: #20C997; }
+        .light-gray-bg { background-color: #F8F9FA; }
+        .header {
+            background-color: #FFFFFF;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #20C997 !important;
+        }
+        .nav-link {
+            color: #343A40;
+            font-weight: 500;
+            margin: 0 1rem;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: #20C997;
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover {
+            color: #20C997;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
 </head>
-<body>
-    <header class="text-center my-4">
-        <h1 class="fw-bold text-black">ProdSeek</h1>
-        <nav class="btn-group" role="group" aria-label="Navigation">
-            <a href="index.html" class="btn btn-outline-primary">Home</a>
-            <a href="about.html" class="btn btn-outline-primary">About</a>
-            <a href="products.html" class="btn btn-outline-primary">Products</a>
-            <a href="login.html" class="btn btn-outline-primary">Login</a>
-        </nav>
+<body class="light-gray-bg">
+    <!-- Header -->
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="#">ProdSeek</a>
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="login.html" class="nav-link">Login</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="about" class="container text-center mb-5">
-        <h2 class="mb-4">About Us</h2>
-
-        <p class="lead"><strong>Welcome to ProdSeek</strong>, your one-stop destination for fresh and high-quality grocery products! We are committed to delivering the finest produce, pantry essentials, and daily grocery needs right to your doorstep.</p>
+    <!-- About Section -->
+    <section class="container text-center py-5">
+        <h2 class="mb-4 teal-text fw-bold">About Us</h2>
+        <p class="lead"><strong>Welcome to ProdSeek</strong>, your one-stop destination for fresh and high-quality grocery products!</p>
 
         <div class="text-start mx-auto" style="max-width: 800px;">
-            <h3 class="mt-4">Who We Are</h3>
-            <p>At <strong>ProdSeek</strong>, we believe that quality food leads to a quality life. Our mission is to provide fresh, organic, and locally sourced groceries at affordable prices. Whether you're looking for farm-fresh fruits, vegetables, dairy products, or household essentials, we've got you covered.</p>
+            <h3 class="mt-4 teal-text">Who We Are</h3>
+            <p>At <strong>ProdSeek</strong>, we believe that quality food leads to a quality life. Our mission is to provide fresh, organic, and locally sourced groceries at affordable prices.</p>
 
-            <h3 class="mt-4">Why Choose Us?</h3>
+            <h3 class="mt-4 teal-text">Why Choose Us?</h3>
             <ul class="list-unstyled">
-                <li>✔ <strong>Fresh & Organic</strong> – We source directly from trusted farms and suppliers to bring you the best.</li>
+                <li>✔ <strong>Fresh & Organic</strong> – We source directly from trusted farms and suppliers.</li>
                 <li>✔ <strong>Affordable Prices</strong> – Get top-quality groceries without breaking the bank.</li>
-                <li>✔ <strong>Convenience</strong> – Order online and enjoy doorstep delivery at your convenience.</li>
-                <li>✔ <strong>Customer Satisfaction</strong> – We prioritize quality and service to ensure you have the best shopping experience.</li>
+                <li>✔ <strong>Convenience</strong> – Order online and enjoy doorstep delivery.</li>
+                <li>✔ <strong>Customer Satisfaction</strong> – We prioritize quality and service.</li>
             </ul>
 
-            <h3 class="mt-4">Our Vision</h3>
-            <p>To revolutionize the grocery shopping experience by making fresh, healthy, and affordable products accessible to every household with just a click.</p>
-
-            <h3 class="mt-4">Join Us on Our Journey!</h3>
-            <p>We are more than just a grocery store; we are a community that values fresh food, healthy living, and convenience. Shop with <strong>ProdSeek</strong> today and enjoy a seamless grocery shopping experience!</p>
+            <h3 class="mt-4 teal-text">Our Vision</h3>
+            <p>To revolutionize the grocery shopping experience by making fresh, healthy, and affordable products accessible to every household.</p>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 teal-bg text-white">
+        <p>&copy; 2025 ProdSeek. All rights reserved.</p>
+    </footer>
 </body>
 </html>
