@@ -29,3 +29,13 @@ body {
     height: auto;
     border-radius: 10px;
 }
+.teal-bg {
+    background-color: #20C997;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.teal-bg:hover {
+    background-color: #1AA179; /* Darker shade on hover */
+    color: #ffffff; /* Ensure text remains visible */
+}
